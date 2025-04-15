@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servidor FiveM PvP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Rubik&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Rubik', sans-serif;
+      background: #0e0e0e;
+      color: #ffffff;
+      overflow-x: hidden;
+      position: relative;
+      z-index: 1;
+    }
+
+    #tsparticles {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+    }
+
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #121212, #1e1e1e);
+      text-align: center;
+      padding: 20px;
+    }
+
+    header h1 {
+      font-size: 4em;
+      font-family: 'Orbitron', sans-serif;
+      color: #00ffe5;
+      text-shadow: 0 0 15px #00ffe5;
+    }
+
+    .btn-discord {
+      margin-top: 20px;
+      padding: 15px 30px;
+      background-color: #7289da;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.2em;
+      text-decoration: none;
+      font-family: 'Orbitron', sans-serif;
+      transition: background-color 0.3s ease;
+      position: relative;
+      z-index: 10;
+    }
+
+    .btn-discord:hover {
+      background-color: #5b6eae;
+    }
+
+    #countdown {
+      font-size: 2em;
+      color: #00ffe5;
+      margin-top: 20px;
+      text-shadow: 0 0 10px #00ffe5;
+    }
+
+    section {
+      padding: 80px 10vw;
+      display: grid;
+      gap: 100px;
+    }
+
+    .card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .card:nth-child(even) {
+      direction: rtl;
+    }
+
+    .card:nth-child(even) > * {
+      direction: ltr;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+
+    .card-content h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5em;
+      color: #00ffe5;
+      margin-bottom: 20px;
+    }
+
+    .card-content p {
+      font-size: 1.2em;
+      line-height: 1.7;
+    }
+
+    .tech-icons-container {
+      padding: 100px 0;
+      background: #111;
+      display: flex;
+      justify-content: center;
+    }
+
+    .tech-icons {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .tech-icons img {
+      width: 60px;
+      height: 60px;
+      filter: drop-shadow(0 0 5px #00ffe5);
+      animation: spin 4s linear infinite;
+      transform-origin: center;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    footer {
+      padding: 40px;
+      text-align: center;
+      background: #0a0a0a;
+      color: #999;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <div id="tsparticles"></div>
+
+  <header>
+    <h1>Bienvenidos a Shadow Academy</h1>
+    <div id="countdown"></div>
+    <a href="https://discord.gg/5cmexcS6Dm" target="_blank" class="btn-discord">Unirse a Discord</a>
+  </header>
+
+  <section>
+    <div class="card">
+      <div class="card-content">
+        <h2>¿Cómo nació la idea?</h2>
+        <p>
+          La idea de crear este servidor surgió de una pasión compartida por el PvP y el roleplay en FiveM. Tras años jugando y experimentando distintos servidores, vimos la oportunidad de hacer algo único, un espacio donde la comunidad pueda disfrutar de una experiencia intensa, divertida y personalizada. Queríamos algo diferente, algo que rompiera esquemas.
+        </p>
+      </div>
+      <img src="img/IMG_7080.jpg" alt="Captura del servidor">
+    </div>
+    <div class="card">
+      <div class="card-content">
+        <h2>El equipo detrás del servidor</h2>
+        <p>
+          Detrás de este proyecto hay un equipo comprometido, que ha puesto todo su esfuerzo, cariño y dedicación para que este servidor sea una realidad. Cada línea de código, cada diseño, cada ajuste está hecho con amor por el juego y la comunidad. Nos une la visión de ofrecer lo mejor y siempre escuchar a los jugadores.
+        </p>
+      </div>
+      <img src="img/image.png" alt="Equipo trabajando">
+    </div>
+    <div class="card">
+      <div class="card-content">
+        <h2>El fundador y su sueño</h2>
+        <p>
+          Después de 5 años viviendo aventuras en el mundo del roleplay y el PvP, el fundador de este servidor finalmente cumplió su sueño crear su propio espacio en el universo de FiveM. Nada de esto hubiera sido posible sin sus amigos, aquellos que han estado desde el principio, compartiendo miles de horas de juego, risas y aprendizajes. Este servidor es más que un juego, es el reflejo de una amistad real que sigue creciendo.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="tech-icons-container">
+    <div class="tech-icons">
+      <img src="img/41Nq6vJMeVL._AC_UF1000,1000_QL80_.jpg" alt="Lua">
+      <img src="img/descarga.png" alt="HTML5">
+      <img src="img/css-letter-logo-design-with-black-background-in-illustrator-logo-modern-alphabet-font-overlap-style-calligraphy-designs-for-logo-poster-invitation-etc-vector.jpg" alt="CSS">
+      <img src="img/Monogram-JS-Logo-Design-by-Greenlines-Studios.jpg" alt="JavaScript">
+      <img src="img/50fbcda1d83e4a9af2684d2f1af7b8de.jpg" alt="DiscordJS">
+      <img src="img/5968254.png" alt="MySQL">
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Servidor FiveM PvP | Diseñado con cariño para la comunidad
+  </footer>
+
+  <script>
+    const launchDate = new Date('2025-06-10T00:00:00').getTime();
+    const countdown = document.getElementById('countdown');
+
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+
+      if (distance <= 0) {
+        countdown.innerHTML = "¡El servidor ya está abierto!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
+
+    tsParticles.load("tsparticles", {
+      fullScreen: false,
+      particles: {
+        number: { value: 60 },
+        color: { value: "#00ffe5" },
+        shape: { type: "circle" },
+        opacity: { value: 0.6 },
+        size: { value: 2 },
+        move: {
+          enable: true,
+          speed: 1.5,
+          direction: "none",
+          outMode: "bounce"
+        }
+      },
+      interactivity: {
+        events: {
+          onhover: { enable: false },
+          onclick: { enable: false },
+          resize: true
+        }
+      },
+      detectRetina: true
+    });
+  </script>
+</body>
+</html>
